@@ -5,7 +5,7 @@ class DownloadsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const Padding(
     padding: const EdgeInsets.all(18),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    child: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const Text('التنزيلات', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
       const SizedBox(height: 16),
       const Row(children: [Expanded(child: Chip(label: Text('جاري التنزيل'))), SizedBox(width: 8), Expanded(child: Chip(label: Text('مكتملة')))]),
