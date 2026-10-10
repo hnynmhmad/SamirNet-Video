@@ -3,7 +3,7 @@ import '../../core/theme/app_theme.dart';
 class DownloadsScreen extends StatelessWidget {
   const DownloadsScreen({super.key});
   @override
-  Widget build(BuildContext context) => Padding(
+  Widget build(BuildContext context) => const Padding(
     padding: const EdgeInsets.all(18),
     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const Text('التنزيلات', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
