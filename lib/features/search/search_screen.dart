@@ -9,7 +9,7 @@ class _SearchScreenState extends State<SearchScreen>{
  bool loading=false; String? error; List<VideoSearchResult> results=[]; int request=0;
  Future<void> search(String value) async {
    final q=value.trim(); if(q.isEmpty){setState(()=>error='اكتب كلمات البحث أولاً.');return;}
-   final current=++request; setState(()=>{loading=true,error=null,results=<VideoSearchResult>[]});
+   final current=++request; setState(() { loading=true; error=null; results=<VideoSearchResult>[]; });
    try { final found=await service.search(q); if(!mounted||current!=request)return; setState(()=>results=found); if(found.isEmpty)error='لا توجد نتائج لهذا البحث.'; }
    catch(e){if(mounted&&current==request)setState(()=>error=e.toString().replaceFirst('Exception: ',''));}
    finally{if(mounted&&current==request)setState(()=>loading=false);}
