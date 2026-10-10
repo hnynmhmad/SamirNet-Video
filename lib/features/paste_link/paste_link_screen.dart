@@ -11,7 +11,7 @@ class _PasteLinkScreenState extends State<PasteLinkScreen>{
  Future<void> _analyze() async {
   if(_busy)return; final link=_controller.text.trim();
   if(!PlatformResolver.isValidHttpUrl(link)){setState(()=>_error='أدخل رابطاً صحيحاً يبدأ بـ https:// أو http://');return;}
-  setState(()=>{_busy=true,_error=null});
+  setState(() { _busy = true; _error = null; });
   try { final platform=PlatformResolver.resolve(link); if(!mounted)return;
    await Navigator.push(context,MaterialPageRoute(builder:(_)=>PreviewScreen(url:link,platform:platform??'مصدر غير معروف')));
   } finally { if(mounted)setState(()=>_busy=false); }
