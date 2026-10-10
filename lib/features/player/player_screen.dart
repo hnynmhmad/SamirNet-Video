@@ -32,7 +32,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
         Row(mainAxisAlignment:MainAxisAlignment.center,children:[
           IconButton(onPressed:()=>controller!.seekTo(controller!.value.position-const Duration(seconds:10)),icon:const Icon(Icons.replay_10)),
           IconButton(onPressed:()=>setState(()=>controller!.value.isPlaying?controller!.pause():controller!.play()),icon:Icon(controller!.value.isPlaying?Icons.pause_circle:Icons.play_circle),iconSize:48),
-          IconButton(onPressed:()=>controller!.seekTo(controller!.value.position+Duration(seconds:10)),icon:const Icon(Icons.forward_10)),
+          IconButton(onPressed:()=>controller!.seekTo(controller!.value.position+const Duration(seconds:10)),icon:const Icon(Icons.forward_10)),
         ]),
       ]),
   ));
