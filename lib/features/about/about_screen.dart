@@ -1,3 +1,41 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
-class AboutScreen extends StatelessWidget { const AboutScreen({super.key}); @override Widget build(BuildContext context)=>Directionality(textDirection:TextDirection.rtl,child:Scaffold(appBar:AppBar(title:const Text('حول التطبيق')),body:Center(child:Padding(padding:const EdgeInsets.all(24),child:Column(mainAxisSize:MainAxisSize.min,children:[Container(width:82,height:82,decoration:BoxDecoration(color:AppColors.coral,borderRadius:BorderRadius.circular(24)),child:const Icon(Icons.download_rounded,color:Colors.white,size:48)),const SizedBox(height:16),const Text('SamirNet Video',style:TextStyle(fontSize:25,fontWeight:FontWeight.w900)),const SizedBox(height:8),const Text('إدارة الروابط والوسائط العامة في واجهة عربية بسيطة.'),const SizedBox(height:8),const Text('الإصدار 1.0.0',style:TextStyle(color:AppColors.muted))])))); }
+
+class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        appBar: AppBar(title: const Text('حول التطبيق')),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 82,
+                  height: 82,
+                  decoration: BoxDecoration(
+                    color: AppColors.coral,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: const Icon(Icons.download_rounded, color: Colors.white, size: 48),
+                ),
+                const SizedBox(height: 16),
+                const Text('SamirNet Video', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900)),
+                const SizedBox(height: 8),
+                const Text('إدارة الروابط والوسائط العامة في واجهة عربية بسيطة.', textAlign: TextAlign.center),
+                const SizedBox(height: 8),
+                const Text('الإصدار 1.0.0', style: TextStyle(color: AppColors.muted)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
