@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+class AppColors {
+  static const coral = Color(0xFFEF4444);
+  static const amber = Color(0xFFF59E0B);
+  static const ink = Color(0xFF111827);
+  static const muted = Color(0xFF6B7280);
+  static const card = Color(0xFFF8FAFC);
+  static const border = Color(0xFFE5E7EB);
+}
+class AppTheme {
+  static ThemeData get light => _make(Brightness.light);
+  static ThemeData get dark => _make(Brightness.dark);
+  static ThemeData _make(Brightness brightness) {
+    final dark = brightness == Brightness.dark;
+    final scheme = ColorScheme.fromSeed(seedColor: AppColors.coral, brightness: brightness, primary: AppColors.coral, secondary: AppColors.amber);
+    return ThemeData(useMaterial3: true, colorScheme: scheme, scaffoldBackgroundColor: dark ? AppColors.ink : Colors.white,
+      appBarTheme: AppBarTheme(backgroundColor: dark ? AppColors.ink : Colors.white, foregroundColor: dark ? Colors.white : AppColors.ink, elevation: 0, centerTitle: false),
+      cardTheme: CardThemeData(color: dark ? const Color(0xFF1F2937) : AppColors.card, elevation: 0, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20), side: BorderSide(color: dark ? const Color(0xFF374151) : AppColors.border))),
+      inputDecorationTheme: InputDecorationTheme(filled: true, fillColor: dark ? const Color(0xFF1F2937) : AppColors.card, border: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none), contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15)),
+      elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(backgroundColor: AppColors.coral, foregroundColor: Colors.white, minimumSize: const Size.fromHeight(52), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)), textStyle: const TextStyle(fontWeight: FontWeight.bold)));
+  }
+}
